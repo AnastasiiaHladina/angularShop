@@ -1,0 +1,57 @@
+.bg-light{
+    background-color: #B71C1C !important;
+ }
+.nav-link{
+     color:white;
+ }
+nav>a>strong{
+    color: #bc9d9d;
+}
+nav>a{
+    color:white;
+}
+.btn-outline{
+    background-color: #bc9d9d;
+    padding: .350rem .75rem;
+    line-height: 0.8;
+    color:black;
+    border-color:#bc9d9d;
+}
+.btn-outline:hover{
+    background-color: #5c4d4d;
+    border-color:#5c4d4d;
+    color: white;
+}
+.form-control:focus, .form-control:active{
+    color: #fcae94;
+    background-color: #5c4d4d;
+    border-color: #654e4e;
+    outline: 0;
+}
+.input-group.mr-sm-2{
+    overflow: hidden;
+}
+.input-group.mr-sm-2{
+    width:100%;
+}
+.navbar-light .navbar-brand{
+    font-size: 1.9rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.btn-secondary{
+    color: rgba(0,0,0,.5);
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active{
+    color: rgba(0,0,0,.7);
+    background-color: transparent;
+    border-color: transparent;
+}
+.btn-secondary:focus, .btn-secondary:active{
+    color: rgba(0,0,0,.7);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1)!important;
+    background-color: transparent!important;
+    border-color: transparent!important;
+}

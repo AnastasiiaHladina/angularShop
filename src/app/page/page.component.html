@@ -1,0 +1,128 @@
+<div class="row mt-3"> 
+  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-9">
+    <div class="row" *ngIf="filterProductObservable$ | async as product else loading">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 item"
+           *ngFor="let prod of product">
+        <div class="card mb-4 box-shadow" appHover>
+          <a href="" [routerLink]="['item', prod.id]">
+            <div class="icon justify-content-center text-center"><i class="large material-icons mt-1">favorite</i></div>
+            <img class="card-img-top card-img-i ml-2 mt-1" src="../../assets/image/female/dress/{{prod.id}}/{{prod.image[0]}}"
+                 data-holder-rendered="true" >
+          </a>
+          <div class="card-body">
+            <div class="row">
+              <div class="col" *ngFor="let colors of prod.color">
+                <div class="circle" [ngStyle]="{'background-color': colors}"></div>
+              </div>
+            </div>
+            <a href="">
+              <p class="text-center">
+                <strong>{{prod.name}}</strong><br>
+                <span>{{prod.manufacturer | uppercase}} </span><br>
+                <strong>{{prod.price}} грн</strong>
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template  #loading>
+      <div class="row loading justify-content-center text-center align-items-center">
+        <fa name="spinner" animation="spin" size="5x"></fa>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-3" id="filter">
+    <h4>Размеры</h4>
+
+    <div class="btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary" *ngFor="let size of sizes" (click)="onClick(size)">
+        <input type="checkbox" checked autocomplete="off"> {{size}}
+      </label>
+    </div>
+    <div id="price">
+      <h4>Цена</h4> 
+      <div class="form-group row" (click)="onSubmit()"> 
+          <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+            <input name="min" [(ngModel)] = "minTxtBox" class="form-control" id="formGroupMin" placeholder="{{getMinValue()}}">
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"><i class="large material-icons">remove</i></div>
+          <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+            <input name="max" [(ngModel)] = "maxTxtBox" class="form-control" id="formGroupMax" placeholder="{{getMaxValue()}}">
+          </div>
+          <div class="col mt-2">
+            <button class="btn btn-warning">Submit</button>
+          </div>
+      </div> 
+    </div>
+    <div id="length">
+      <h4>Длина</h4>
+      <a (click)="chooseFilter('Короткое', 'len')">Короткие</a>
+          <i class="large material-icons Allength"  *ngIf="filter.byLength === 'Короткое'" (click)="clearFilter('len')">close</i> <br>
+      <a (click)="chooseFilter('До колен', 'len')">До колен</a>
+          <i class="large material-icons Allength"  *ngIf="filter.byLength === 'До колен'" (click)="clearFilter('len')">close</i> <br>
+      <a (click)="chooseFilter('Длинное', 'len')">Длинные</a>
+          <i class="large material-icons Allength"  *ngIf="filter.byLength === 'Длинное'" (click)="clearFilter('len')">close</i> <br>
+    </div>
+    <div id="sleeve">
+      <h4>Рукав</h4>
+      <a (click)="chooseFilter('На брительках', 'sleeve')">На брительках</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.bySleeve === 'На брительках'" (click)="clearFilter('sleeve')">close</i> <br>
+      <a (click)="chooseFilter('С рукавом', 'sleeve')">С рукавом</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.bySleeve === 'С рукавом'" (click)="clearFilter('sleeve')">close</i> <br>
+      <a (click)="chooseFilter('Не имеет рукав', 'sleeve')">Не имеет рукав</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.bySleeve === 'Не имеет рукав'" (click)="clearFilter('sleeve')">close</i> <br>
+    </div>
+    <div id="notch">
+      <h4>Вырез</h4>
+      <a (click)="chooseFilter('Круглый', 'notch')">Круглый</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.byNotch === 'Круглый'" (click)="clearFilter('notch')">close</i> <br>
+      <a (click)="chooseFilter('v-образный', 'notch')">v-образный</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.byNotch === 'v-образный'" (click)="clearFilter('notch')">close</i> <br>
+      <a (click)="chooseFilter('Лодочка', 'notch')">Лодочка</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.byNotch === 'Лодочка'" (click)="clearFilter('notch')">close</i> <br>
+      <a (click)="chooseFilter('Каре', 'notch')">Каре</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.byNotch === 'Каре'" (click)="clearFilter('notch')">close</i> <br>
+    </div>
+    <div id="mark">
+      <h4>Бренд</h4>
+      <a (click)="chooseFilter('BODYFLIRT', 'mark')">BODYFLIRT</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.byMark === 'BODYFLIRT'" (click)="clearFilter('mark')">close</i> <br>
+      <a (click)="chooseFilter('RAINBOW', 'mark')">RAINBOW</a> 
+          <i class="large material-icons Allength"  *ngIf="filter.byMark === 'RAINBOW'" (click)="clearFilter('mark')">close</i> <br>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+      <div class="row justify-content-center">
+        <nav class="align-self-center">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#">Prev</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+        </nav>
+  </div>
+</div>
+</div>

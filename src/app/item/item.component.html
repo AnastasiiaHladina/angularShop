@@ -1,0 +1,306 @@
+<div class="container-fluid" *ngIf="product">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="d-none d-sm-block col-md-3 mt-4 ">
+            <img class="col img-fluid" src="../../assets/image/mark/{{product.manufacturer}}.png" /> 
+            <div class="row" id="galery">
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6" *ngFor="let img of product.image">
+                <img class="imgG" src="../../assets/image/female/dress/{{product.id}}/{{img}}" />
+              </div> 
+            </div>
+          </div>
+          <div class="col-md-6 mt-2" id="mainContent">
+            <h3>
+               {{product.name}}
+            </h3>          
+            <div class="row justify-content-center">
+              <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                <div class="carousel slide" id="carousel-551975">
+                  <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#carousel-551975">
+                    </li>
+                    <li data-slide-to="1" data-target="#carousel-551975" class="active">
+                    </li>
+                    <li data-slide-to="2" data-target="#carousel-551975">
+                    </li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item">
+                      <img class="d-block w-100 img-fluid" src="../../assets/image/female/dress/{{product.id}}/{{product.image[0]}}" />
+                    </div>
+                    <div class="carousel-item active">
+                      <img class="d-block w-100 img-fluid" src="../../assets/image/female/dress/{{product.id}}/{{product.image[1]}}" />
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100 img-fluid" src="../../assets/image/female/dress/{{product.id}}/{{product.image[2]}}" />
+                    </div>
+                  </div> 
+                  <a class="carousel-control-prev" href="#carousel-551975" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span> 
+                    <span class="sr-only">Previous</span>
+                  </a> 
+                  <a class="carousel-control-next" href="#carousel-551975" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mt-6" id="buy">
+            <h2>
+              1 549грн
+            </h2>
+            <h3><i class="small material-icons">info</i> Бесплатная доставка от 499 грн</h3>
+            <div class="form-group" id="checkColor"> 
+              <select class="custom-select">
+                <option selected>Черное</option>
+                <option>Белое</option>
+                <option>Синее</option>
+                <option>Розовое</option>
+                <option>Красное</option>
+              </select>
+            </div>
+            <div class="btn-group-toggle" data-toggle="buttons" >
+              <label class="btn btn-secondary" *ngFor="let size of product.size">
+                <input type="checkbox" checked autocomplete="off" >{{size}}
+              </label>
+            </div>
+            <div class="col">
+              <a href="#table">Таблица размеров</a>
+            </div>
+            <button type="button" class="btn buy btn-lg btn-block">  Купить <i class="small material-icons">add_shopping_cart</i></button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">В избранное <i class="small material-icons">favorite_border</i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-12 mt-5">
+      <div class="row align-items-center justify-content-center">
+        <div class="tabbable col-lg-10" id="tabs-683421">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#panel-233434" data-toggle="tab">Информация о товаре</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#panel-991711" data-toggle="tab">Отзывы пользователей</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="panel-233434">
+              <table class="table mb-4">
+                <tbody>
+                  <tr class="table-warning">
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      Номер товара
+                    </td>
+                    <td>
+                       {{product.id}} 
+                    </td> 
+                  </tr>
+                  <tr class="table-warning">
+                    <td>
+                      2
+                    </td>
+                    <td>
+                      Марка
+                    </td>
+                    <td>
+                      {{product.manufacturer}}
+                    </td> 
+                  </tr>
+                  <tr class="table-warning">
+                    <td>
+                      3
+                    </td>
+                    <td>
+                      Материал
+                    </td>
+                    <td>
+                      Верх: 100% полиэстер
+                    </td> 
+                  </tr>
+                  <tr class="table-warning">
+                    <td>
+                      4
+                    </td>
+                    <td>
+                      Длина
+                    </td>
+                    <td>
+                      {{product.length}}
+                    </td> 
+                  </tr>
+                  <tr class="table-warning">
+                    <td>
+                      5
+                    </td>
+                    <td>
+                      Длина рукавов
+                    </td>
+                    <td>
+                      {{product.sleeve}}
+                    </td> 
+                  </tr> 
+                  <tr class="table-warning">
+                    <td>
+                      6
+                    </td>
+                    <td>
+                      Цвет
+                    </td>
+                    <td>
+                        <div class="row col-md-6">
+                          <div class="col" *ngFor="let colors of product.color">
+                              <div class="circle" [ngStyle]="{'background-color': colors}"></div>
+                          </div>
+                        </div>
+                    </td> 
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane" id="panel-991711">
+              <div class="media mt-4">
+                <img class="d-flex mr-3 smallImg" src="https://www.buro247.ru/thumb/625x1250_0/images/2017/09/poturemskaya/6-sep-2017-beauty-salons-where-are-best-face-peeli-op.jpg" />
+                <div class="media-body">
+                  <h5 class="mt-0">
+                     Анастасия / 16-03-2018
+                  </h5> отличное платье. стильное. сидит хорошо, на фигуре "песочные часы". брала черное. единственный минус - за все цепляюсь ((( дырки крупные, то собачкой от сумки, то за ручку двери... 
+                </div>
+              </div>
+              <div class="media mt-4">
+                <img class="mr-3 smallImg" src="https://avatars.mds.yandex.net/get-pdb/251121/1b321df7-456c-46d1-83f1-f62f5f088c18/s800" />
+                <div class="media-body">
+                  <h5 class="mt-0">
+                      Кира / 17-03-2018
+                  </h5> Платье нарядное. На 88-62-94 на пушап село очень хорошо. На рост 164 на 1-2 см прикрывает колено.
+                </div>
+              </div>
+              <div class="media mt-4 mb-4">
+                <img class="mr-3 smallImg" src="https://4tololo.ru/files/styles/large/public/images/20160112180318.jpg?itok=iffFatR_" />
+                <div class="media-body">
+                  <h5 class="mt-0">
+                    Мила / 20-10-2017
+                  </h5> на 98/82/102 вес 67 кг рост 169 платье налезло, НО слегка перетянуло, думаю 40-й был бы в самый раз
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-12 mt-5" id="table">
+      <h2>Таблица размеров</h2>
+      <h3>После измерения своей фигуры, подберите подходящий Вам размер</h3>
+      <div class="row col-auto justify-content-center">
+        <div class="col-lg-6">
+            <table class="table table-condensed table-sizes table-sm">
+              <thead> 
+              <tr>
+                <th>Размер</th>
+                <th>Обхват груди <i class="medium material-icons">looks_two</i></th>
+                <th>Обхват талии <i class="medium material-icons">looks_3</i></th>
+                <th>Обхват бедёр <i class="medium material-icons">looks_4</i></th>
+              </tr>
+              </thead> 
+              <tbody>
+                <tr>
+                  <td>32</td>
+                  <td>74-77</td>
+                  <td>60-62</td>
+                  <td>84-87</td>
+                </tr>
+                <tr>
+                  <td>34</td>
+                  <td>78-81</td>
+                  <td>63-65</td>
+                  <td>88-91</td>
+                </tr>
+                <tr>
+                  <td>36</td>
+                  <td>82-85</td>
+                  <td>66-69</td>
+                  <td>92-95</td>
+                </tr>
+                <tr>
+                  <td>38</td>
+                  <td>86-89</td>
+                  <td>70-73</td>
+                  <td>96-98</td>
+                </tr>
+                <tr>
+                  <td>40</td>
+                  <td>90-93</td>
+                  <td>74-77</td>
+                  <td>99-102</td>
+                </tr>
+                <tr>
+                  <td>42</td>
+                  <td>94-97</td>
+                  <td>78-81</td>
+                  <td>103-106</td>
+                </tr>
+                <tr>
+                  <td>44</td>
+                  <td>98-102</td>
+                  <td>82-86</td>
+                  <td>107-110</td>
+                </tr>
+                <tr>
+                  <td>46</td>
+                  <td>103-107</td>
+                  <td>87-91</td>
+                  <td>111-115</td>
+                </tr>
+                <tr>
+                  <td>48</td>
+                  <td>108-113</td>
+                  <td>92-96</td>
+                  <td>116-120</td>
+                </tr>
+                <tr>
+                  <td>50</td>
+                  <td>114-119</td>
+                  <td>97-102</td>
+                  <td>121-125</td>
+                </tr>
+                <tr>
+                  <td>52</td>
+                  <td>120-125</td>
+                  <td>103-108</td>
+                  <td>126-130</td>
+                </tr>
+                <tr>
+                  <td>54</td>
+                  <td>126-131</td>
+                  <td>109-114</td>
+                  <td>131-135</td>
+                </tr>
+                <tr>
+                  <td>56</td>
+                  <td>132-137</td>
+                  <td>115-120</td>
+                  <td>136-141</td>
+                </tr>
+                <tr>
+                  <td>58</td>
+                  <td>138-143</td>
+                  <td>121-126</td>
+                  <td>142-147</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="col-lg-2">
+          <img class="img-fluid"  src="https://www.bonprix.ua/mstatic/gfx/service/tables_sizes/1.png">
+        </div>
+      </div>
+    </div> 
+  </div>

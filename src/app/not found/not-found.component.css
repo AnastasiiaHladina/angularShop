@@ -1,0 +1,20 @@
+#not-found{
+    color: rgb(245, 0, 0); 
+    text-shadow: 0 -1px rgba(0,0,0,.1);
+    -webkit-animation: pulsate 1.2s linear infinite; 
+    animation: pulsate 1.2s linear infinite;
+    margin-bottom: 127px;
+}
+
+@-webkit-keyframes pulsate {
+    50%{ 
+         color: rgb(0, 0, 0); 
+         text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; 
+        } 
+} 
+@keyframes pulsate { 
+    50% { 
+        color: rgb(92, 40, 5); 
+        text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; 
+    } 
+} 

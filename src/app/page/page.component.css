@@ -1,0 +1,109 @@
+/*Filter*/
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle{
+    background-color: #2a2a2a;
+}
+.btn-secondary{
+    background-color: #5d5d5d;
+    margin: 3px;
+}
+.form-control{
+    font-size: .8rem;
+    width: 90%;
+}
+#length, #sleeve, #notch, #mark{
+    margin-top: 3px;
+}
+.btn-black{
+    color: white;
+    background-color: #2a2a2a;
+    padding: 2px 3px;
+}
+.col-xs-1.col-sm-1.col-md-1.col-lg-1{
+    margin: 0;
+    padding: 0;
+}
+#filter>div>a{
+    color:#ff6c00;
+}
+#filter>div>a:hover{
+    color:#b60000;
+    cursor: pointer;
+}
+.Allength{
+    font-size: 14px!important;
+}
+.Allength:hover{
+    cursor: pointer;
+    color:#8a0707;
+}
+.loading{
+  height:100%;
+  width: 100%;
+}
+.loading>fa{
+  color:#ff5607 !important;
+}
+#price>div>div>button{
+    width: 88%;
+}
+
+/*Item*/
+.item>.box-shadow>a, .item>.box-shadow>.card-body>a{
+    text-decoration:none;
+    color:#333;
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-size: 14px;
+}
+.item{
+    background-color: transparent;
+}
+.icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    z-index: 202;
+    color:#ff7456;
+    padding: 10px 5px;
+    border:1px solid transparent;
+    background-color: transparent;
+    border-radius: 50px;
+}
+.icon:hover{
+    border: 1px solid #b3b3b3;
+    background-color: white;
+    border:1px solid #4b1a1a66;
+    color:#f5380f;
+}
+.circle{
+    border: 1px solid #6f6f6f;
+    border-radius: 20px;
+    width:20px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+#red{
+    background-color: #199553;
+}
+#black{
+    background-color: #db6e1e;
+}
+#green{
+    background-color: #6cbce1;
+}
+.card-img-i{
+    height: 300px;
+     width: 94%;
+    display: block;
+}
+.hovered{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    transition: .5s all;
+    z-index: 10;
+}
+.page-link{
+    color:#f65a11;
+}
