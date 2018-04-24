@@ -1,4 +1,4 @@
-h3{
+.delivery{
     font-size: 14px;
     color:white;
     background-color: rgb(224, 174, 93);
@@ -6,10 +6,55 @@ h3{
     margin-top:15px;
 }
 h3 > a{
+
     color:rgb(136, 40, 27);
 }
-.row > .col-md-6{
-    padding: 0!important;
+.title{
+    font-family: MuseoCyrl300,Arial,sans-serif; 
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 0 0 10px #333,0 0 5px #333;
+    -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(color=#747474,offX=1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#747474,offX=-1,offY=1) progid:DXImageTransform.Microsoft.dropshadow(color=#747474,offX=1,offY=-1) progid:DXImageTransform.Microsoft.dropshadow(color=#747474,offX=-1,offY=-1)";
+    padding: 0 5px;
+}
+#a{
+    background-image: url("https://www.bonprix.ua/pub/banners/main_page/3449/image_background_884914_2018-04-23_08-33-43.jpg");
+}
+#b{
+    background-image: url("https://www.bonprix.ua/pub/banners/main_page/3449/image_background_885049_2018-04-19_12-27-21.jpg");
+    height: 400px;
+}
+#c{
+    background-image: url("https://www.bonprix.ua/pub/banners/main_page/3449/image_background_884890_2018-04-23_08-33-59.jpg");
+    height: 400px;
+}
+#d{
+    background-image: url("https://www.bonprix.ua/pub/banners/main_page/3037/banner885062_0_1524464999.jpg");
+    height: 500px;
+}
+#e{
+    background-image: url("https://www.bonprix.ua/pub/banners/main_page/3037/banner885062_1_1524464999.jpg");
+    height: 500px;
+}
+#f{
+    background-image: url("https://www.bonprix.ua/pub/banners/main_page/3463/image_background_884334_2018-04-23_08-32-25.gif");
+    height: 200px;
+} 
+#a > h3{
+    margin-top:10em; 
+}
+#b > h3{
+    margin-top:5em; 
+}
+#c > h3{
+    margin-top:7em; 
+}
+.Img{
+    background-repeat: no-repeat;/*не повтор¤ть*/ 
+    background-size:cover;	/*резинова¤ картинка*/
     overflow: hidden;
-    height: 650px;
+}
+#ots{
+    margin-bottom: 50px;
 }

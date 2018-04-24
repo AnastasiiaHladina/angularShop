@@ -19,9 +19,9 @@ import { HoverDirective } from './directives/hover.directive';
 
 
 const appRoutes:Routes = [
-  { path: '', component: PageComponent},//продукция
-  { path: 'main-page', component:MainPageComponent },//главная страница
-  { path: 'item/:id', component:ItemComponent },//продукт
+  { path: '', component:MainPageComponent },//продукция
+  { path: 'page', component: PageComponent},//главная страница
+  { path: 'page/item/:id', component:ItemComponent },//продукт
   { path: '**', component: NotFoundComponent }//не найдено
 ]
 

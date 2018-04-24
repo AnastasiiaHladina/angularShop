@@ -49,20 +49,29 @@
             </div>
           </div>
           <div class="col-md-3 mt-6" id="buy">
+            <div class="rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
             <h2>
-              1 549грн
+              {{product.price}} грн
             </h2>
             <h3><i class="small material-icons">info</i> Бесплатная доставка от 499 грн</h3>
-            <div class="form-group" id="checkColor"> 
-              <select class="custom-select">
-                <option selected>Черное</option>
-                <option>Белое</option>
-                <option>Синее</option>
-                <option>Розовое</option>
-                <option>Красное</option>
-              </select>
+
+
+
+
+            <div class="btn-group-toggle" data-toggle="buttons" id="color">
+              Выберите цвет <br>
+              <label class="btn btn-secondary" *ngFor="let colors of product.color" [ngStyle]="{'background-color': colors}">
+                <input type="checkbox" checked autocomplete="off" >
+              </label>
             </div>
+
+
+
+
             <div class="btn-group-toggle" data-toggle="buttons" >
+              Выберите размер <br>
               <label class="btn btn-secondary" *ngFor="let size of product.size">
                 <input type="checkbox" checked autocomplete="off" >{{size}}
               </label>
